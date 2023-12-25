@@ -1,0 +1,20 @@
+<!-- <button (click)="openModel(content)">Open</button> -->
+<ng-template #content let-modal>
+
+
+    <div class="bg-aliceblue modal-div">
+    
+        <div class="modal-body text-center  m-5">
+
+            <div>Are you sure , you want to delete user details ?</div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)="onDelete();modal.close()" >Delete</button>
+            <button class="btn btn-success" (click)="onCancel();modal.close()">cancel</button>
+          
+        </div>
+    </div>
+
+</ng-template>

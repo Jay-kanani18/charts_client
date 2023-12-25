@@ -1,0 +1,106 @@
+
+
+<div class="container-fluid mt--5">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0 row mr-0 ml-0">
+            <div class="col-sm-4">
+              <div class="form-control-search d-flex align-items-center">
+                <input type="search" class="form-control" placeholder="Search" #search />
+                <div class="btn-group">
+                  <button class="btn" (click)="onSearch(search.value)">
+                    <i class="search-icon fas fa-search"></i>
+                  </button>
+                  <button class="btn refresh" (click)="getUsers(); search.value = ''">
+                    ⟳
+                  </button>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-sm-8 text-right">
+              <button class="btn btn-outline-primary add-dialog" (click)="openUserDetail()">
+                + Add
+              </button>
+            </div>
+          </div>
+          <div class="table-responsive text-center">
+            <table class="table align-items-center table-flush" id="example">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" (click)="onSort('name')">Name</th>
+                  <th scope="col" (click)="onSort('email')">Email</th>
+                  <th scope="col" (click)="onSort('mobile')">Phone</th>
+                  <th scope="col">Database</th>
+                  <th scope="col">Database_string</th>
+                  <th scope="col">Token</th>
+                  <th scope="col">Collection</th>
+                  <th scope="col">Charts</th>
+                  <th scope="col">Premium</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of allUsers">
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.phone }}</td>
+                  <td>{{ user.database }}</td>
+                  <td>{{ user.database_string }}</td>
+                  <td>{{ user.token }}</td>
+                  <td class="text-right">{{user.collection}}</td>
+                  <td class="text-right">{{user.charts.length}}</td>
+                  <td class="text-right">{{user.is_premium}}</td>
+                  <td>
+                    <button class="btn " (click)="openUserDetail(user._id)"> <img class="icon" src="../../../assets/icons/pencil.png" alt="icon"></button>
+                    <button class="btn  m-2 " (click)="
+                    
+                    router.navigate(['/charts',user._id])"
+                    > <img class="icon" src="../../../assets/icons/growth.png" alt="icon"></button>
+                    <button class="btn" (click)="openConfirm();userId=user._id"> <img class="icon" src="../../../assets/icons/delete.png" alt="icon"></button>
+                  
+                  </td>
+
+                </tr>
+                <tr *ngIf="allUsers?.length <= 0">
+                  <td class="p-5" colspan="10">
+                    <strong> Users Not Found</strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+ 
+          <!-- <div class="card-footer py-4">
+            <nav aria-label="...">
+              <ul class="pagination justify-content-end mb-0">
+                <li class="page-item disabled" *ngIf="currentPage !== 1" (click)="onPrevious()">
+                  <a class="page-link">
+                    <i class="fas fa-angle-left"></i>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item" [ngClass]="{ active: currentPage == i + 1 }"
+                  [hidden]="currentPage < i || currentPage - 1 > i + 1" *ngFor="let item of NoOfPages; let i = index">
+                  <a class="page-link" (click)="onPage(i + 1)">{{ i + 1 }}</a>
+                </li>
+  
+                <li class="page-item" [ngClass]="{ vh: currentPage == NoOfPages.length }" (click)="onNext()">
+                  <a class="page-link">
+                    <i class="fas fa-angle-right"></i>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div> -->
+        </div>
+      </div>
+    </div>
+</div>
+  
+  <!-- <app-charts #chartsComponent ></app-charts> -->
+  <app-user-detail-modal #userDetailComponent (UserHandler)="getUsers()"> </app-user-detail-modal>
+  <app-delete-component #deleteComponent (DeleteHandler)="checkDelete($event)"></app-delete-component>

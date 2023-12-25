@@ -1,0 +1,51 @@
+@keyframes slide-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+    color: #ffffff;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .carousel-item {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #dbdbdb;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .centered-item {
+    font-size: 50px;
+    border-top: 1px solid rgb(109, 109, 109);
+    border-bottom: 1px solid rgb(109, 109, 109);
+    color: white;
+  }
+  
+  .dis-hide {
+    visibility: hidden;
+  }
+  

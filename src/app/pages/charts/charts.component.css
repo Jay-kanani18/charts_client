@@ -1,0 +1,176 @@
+/* styles.css (or your component-specific style file) */
+
+/* .fade-in-down {
+    opacity: 0;
+    transform: translateY(-20px); 
+    animation: fadeInDownAnimation 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInDownAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+ 
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-20px); 
+    animation: fadeInLeftAnimation 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInLeftAnimation {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  } */
+.modal-div {
+  background-color: white;
+  /* background-color: black; */
+  /* color: white; */
+}
+
+.item {
+  display: inline-block;
+  width: 33%;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.names:hover {
+
+
+  /* font-size: 30px; */
+  /* font-size: larger; */
+  /* background-color: gray; */
+  /* color: white; */
+  border-bottom: 1px solid green;
+  color: green;
+  cursor: pointer;
+  ;
+
+}
+
+.model {
+  position: relative;
+
+}
+
+.list {
+  height: 300px;
+}
+
+.title {
+  font-size: 25px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: -200px !important;
+  /* Adjust the width of the sidebar */
+  height: 80%;
+  width: 200px;
+  /* Adjust the width of the sidebar */
+  background-color: #fff;
+  transition: right 0.3s ease;
+  /* Add transition for smooth animation */
+  border: 0.5px solid gray;
+  /* padding: 2%; */
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.body {
+  /* margin-top: 5%; */
+  height: 80%;
+  /* overflow:scroll; */
+  overflow-y: scroll;
+  border: 0.5px solid gray;
+  padding: 5%;
+  border-left: none;
+
+}
+
+.choices {
+  margin-top: 10px;
+  /* text-align: center; */
+}
+
+.choices:hover {
+  background-color: rgb(201, 201, 201);
+}
+
+
+
+.catagories {
+  width: 20vw;
+  height: 50vh;
+  background-color: white;
+  box-shadow: 0px -10px 15px 0px rgba(0, 0, 0, 0.04);;
+  padding: 1%;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-size: 1rem;
+
+}
+
+.catagory:hover {
+  color: lightblue;
+  background-color: rgb(82, 82, 255);
+  border-radius:  0px 10px 10px 0px;
+  
+}
+
+.subcatagories {
+  width: 20vw;
+  background-color: white;
+  height: 50vh;
+  box-shadow:  0px -10px 15px 0px rgba(0, 0, 0, 0.04);;
+  padding: 1%;
+  font-size: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.subcatagory:hover {
+  color: #ff9797;
+}
+
+.charts {
+  margin-left: 10px;
+  width: 20vw;
+  background-color: white;
+  height: 50vh;
+  box-shadow: 0px -10px 15px 0px rgba(0, 0, 0, 0.04);;
+  padding: 1%;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.chart:hover {
+  color: #ffcc00;
+}
+
+.main {
+  width: 100vw;
+  display: flex;
+}
+
+h3 {
+  text-align: center;
+}
